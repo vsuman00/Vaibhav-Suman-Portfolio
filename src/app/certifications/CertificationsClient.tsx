@@ -18,11 +18,23 @@ interface Certification {
   expiryDate?: string
   credentialId?: string
   credentialUrl?: string
-  certificateFile?: any
+  certificateFile?: {
+    asset: {
+      _ref: string
+      _type: string
+      url?: string
+    }
+  }
   skills?: string[]
   category: string
   level?: string
-  logo?: any
+  logo?: {
+    asset: {
+      _ref: string
+      _type: string
+      url?: string
+    }
+  }
   featured: boolean
   order?: number
 }
@@ -252,7 +264,7 @@ export default function CertificationsClient({ certifications }: CertificationsC
                             </Link>
                           </Button>
                         )}
-                        {cert.certificateFile && (
+                        {cert.certificateFile && cert.certificateFile.asset.url && (
                           <Button asChild variant="outline" size="sm">
                             <Link 
                               href={cert.certificateFile.asset.url} 
@@ -406,7 +418,7 @@ export default function CertificationsClient({ certifications }: CertificationsC
                             </Link>
                           </Button>
                         )}
-                        {cert.certificateFile && (
+                        {cert.certificateFile && cert.certificateFile.asset.url && (
                           <Button asChild variant="outline" size="sm">
                             <Link 
                               href={cert.certificateFile.asset.url} 

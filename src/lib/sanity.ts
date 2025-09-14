@@ -244,10 +244,14 @@ export async function getBlogPostBySlug(slug: string) {
   return await client.fetch(queries.blogPostBySlug, { slug })
 }
 
+interface BlogPostWithCategories {
+  categories?: string[]
+}
+
 export async function getBlogCategories() {
-  const posts = await client.fetch(queries.blogCategories)
-  const categories = new Set()
-  posts.forEach((post: any) => {
+  const posts: BlogPostWithCategories[] = await client.fetch(queries.blogCategories)
+  const categories = new Set<string>()
+  posts.forEach((post) => {
     post.categories?.forEach((category: string) => categories.add(category))
   })
   return Array.from(categories)
@@ -265,8 +269,19 @@ export async function getFeaturedCertifications() {
   return await client.fetch(queries.featuredCertifications)
 }
 
+interface ContactMessageData {
+  name: string
+  email: string
+  company?: string
+  subject: string
+  message: string
+  projectType?: string
+  budget?: string
+  timeline?: string
+}
+
 // Contact form submission
-export async function submitContactMessage(data: any) {
+export async function submitContactMessage(data: ContactMessageData) {
   return await client.create({
     _type: 'contactMessage',
     ...data,

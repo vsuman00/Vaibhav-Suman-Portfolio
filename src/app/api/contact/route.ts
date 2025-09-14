@@ -37,7 +37,7 @@ function rateLimit(ip: string): boolean {
 }
 
 // Email sending function (mock implementation)
-async function sendEmail(data: any): Promise<boolean> {
+async function sendEmail(data: z.infer<typeof contactSchema>): Promise<boolean> {
   // In a real application, you would integrate with an email service like:
   // - SendGrid
   // - Mailgun

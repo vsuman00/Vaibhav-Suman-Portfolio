@@ -1,6 +1,13 @@
 import { NextResponse } from 'next/server'
 import { client } from '@/lib/sanity'
 
+interface SanityDocument {
+  slug: {
+    current: string
+  }
+  _updatedAt: string
+}
+
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://portfolio.example.com'
 
 export async function GET() {
@@ -32,19 +39,19 @@ ${staticPages.map(page => `  <url>
     <changefreq>${page === '' ? 'daily' : 'weekly'}</changefreq>
     <priority>${page === '' ? '1.0' : '0.8'}</priority>
   </url>`).join('\n')}
-${projects.map((project: any) => `  <url>
+${projects.map((project: SanityDocument) => `  <url>
     <loc>${baseUrl}/projects/${project.slug.current}</loc>
     <lastmod>${new Date(project._updatedAt).toISOString()}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>`).join('\n')}
-${publications.map((publication: any) => `  <url>
+${publications.map((publication: SanityDocument) => `  <url>
     <loc>${baseUrl}/publications/${publication.slug.current}</loc>
     <lastmod>${new Date(publication._updatedAt).toISOString()}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>`).join('\n')}
-${blogPosts.map((post: any) => `  <url>
+${blogPosts.map((post: SanityDocument) => `  <url>
     <loc>${baseUrl}/blog/${post.slug.current}</loc>
     <lastmod>${new Date(post._updatedAt).toISOString()}</lastmod>
     <changefreq>monthly</changefreq>
