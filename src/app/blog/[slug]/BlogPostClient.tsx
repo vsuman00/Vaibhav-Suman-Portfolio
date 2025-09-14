@@ -50,12 +50,19 @@ interface Props {
 }
 
 export default function BlogPostClient({ post }: Props) {
+  const [isClient, setIsClient] = useState(false)
   const [isLiked, setIsLiked] = useState(false)
   const [isBookmarked, setIsBookmarked] = useState(false)
   const [showScrollTop, setShowScrollTop] = useState(false)
   const [readingProgress, setReadingProgress] = useState(0)
 
   useEffect(() => {
+    setIsClient(true)
+  }, [])
+
+  useEffect(() => {
+    if (!isClient) return
+    
     const handleScroll = () => {
       const scrollTop = window.scrollY
       const docHeight = document.documentElement.scrollHeight - window.innerHeight
@@ -66,7 +73,7 @@ export default function BlogPostClient({ post }: Props) {
 
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+  }, [isClient])
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })

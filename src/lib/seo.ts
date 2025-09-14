@@ -17,38 +17,47 @@ export interface SEOConfig {
 }
 
 const defaultSEO: SEOConfig = {
-  title: 'John Doe - Full Stack Developer & Software Engineer',
-  description: 'Experienced Full Stack Developer specializing in React, Node.js, and modern web technologies. Building scalable applications and delivering exceptional user experiences.',
+  title: 'Vaibhav Suman - Full Stack Developer & AI/ML Engineer',
+  description: 'Experienced Full Stack Developer and AI/ML Engineer specializing in React, Node.js, Python, and modern web technologies. Building scalable applications with AI integration and delivering exceptional user experiences.',
   keywords: [
     'Full Stack Developer',
+    'AI/ML Engineer',
+    'Machine Learning',
+    'Artificial Intelligence',
     'Software Engineer',
     'React Developer',
     'Node.js Developer',
+    'Python Developer',
     'TypeScript',
     'JavaScript',
     'Web Development',
     'Frontend Developer',
     'Backend Developer',
+    'Data Science',
+    'Deep Learning',
+    'Neural Networks',
     'Portfolio',
     'Software Development',
     'Web Applications',
     'API Development',
     'Database Design',
     'Cloud Computing',
+    'AWS',
     'DevOps',
     'Agile Development'
   ],
-  author: 'John Doe',
-  url: 'https://johndoe.dev',
-  image: 'https://johndoe.dev/og-image.jpg',
+  author: 'Vaibhav Suman',
+  url: 'https://vaibhavsuman.dev',
+  image: 'https://vaibhavsuman.dev/og-image.jpg',
   type: 'website',
   locale: 'en_US'
 }
 
 export function generateMetadata(config: Partial<SEOConfig> = {}): Metadata {
   const seo = { ...defaultSEO, ...config }
-  
-  const metadata: Metadata = {
+  const baseUrl = seo.url || 'https://vaibhavsuman.dev'
+
+  return {
     title: seo.title,
     description: seo.description,
     keywords: seo.keywords?.join(', '),
@@ -60,25 +69,25 @@ export function generateMetadata(config: Partial<SEOConfig> = {}): Metadata {
       address: false,
       telephone: false,
     },
-    metadataBase: seo.url ? new URL(seo.url) : undefined,
+    metadataBase: new URL(baseUrl),
     alternates: {
       canonical: seo.url,
       languages: seo.alternateLocales ? 
-        Object.fromEntries(seo.alternateLocales.map(locale => [locale, `${seo.url}/${locale}`])) : 
-        undefined
+        Object.fromEntries(seo.alternateLocales.map(locale => [locale, `${baseUrl}/${locale}`])) : 
+        undefined,
     },
     openGraph: {
       title: seo.title,
       description: seo.description,
       url: seo.url,
-      siteName: 'John Doe Portfolio',
+      siteName: 'Vaibhav Suman Portfolio',
       images: seo.image ? [
         {
           url: seo.image,
           width: 1200,
           height: 630,
           alt: seo.title,
-        }
+        },
       ] : undefined,
       locale: seo.locale,
       type: seo.type || 'website',
@@ -91,7 +100,7 @@ export function generateMetadata(config: Partial<SEOConfig> = {}): Metadata {
       card: 'summary_large_image',
       title: seo.title,
       description: seo.description,
-      creator: '@johndoe_dev', // Replace with actual Twitter handle
+      creator: '@vaibhavsuman5',
       images: seo.image ? [seo.image] : undefined,
     },
     robots: {
@@ -106,75 +115,60 @@ export function generateMetadata(config: Partial<SEOConfig> = {}): Metadata {
       },
     },
     verification: {
-      google: 'your-google-verification-code', // Replace with actual verification code
-      yandex: 'your-yandex-verification-code', // Replace with actual verification code
-      yahoo: 'your-yahoo-verification-code', // Replace with actual verification code
+      google: 'your-google-verification-code',
+      yandex: 'your-yandex-verification-code',
+      yahoo: 'your-yahoo-verification-code',
     },
   }
-
-  return metadata
 }
 
 export function generateStructuredData(type: 'person' | 'website' | 'article' | 'breadcrumb', data: any) {
-  const baseUrl = defaultSEO.url
+  const baseUrl = 'https://vaibhavsuman.dev'
   
   switch (type) {
     case 'person':
       return {
         '@context': 'https://schema.org',
         '@type': 'Person',
-        name: data.name || 'John Doe',
-        jobTitle: data.jobTitle || 'Full Stack Developer',
-        description: data.description || defaultSEO.description,
-        url: data.url || baseUrl,
-        image: data.image || defaultSEO.image,
-        email: data.email || 'john@johndoe.dev',
-        telephone: data.telephone,
-        address: data.address ? {
-          '@type': 'PostalAddress',
-          addressLocality: data.address.city,
-          addressRegion: data.address.state,
-          addressCountry: data.address.country
-        } : undefined,
-        sameAs: data.socialLinks || [
-          'https://linkedin.com/in/johndoe',
-          'https://github.com/johndoe',
-          'https://twitter.com/johndoe_dev'
-        ],
+        name: data.name || 'Vaibhav Suman',
+        url: baseUrl,
+        image: data.image || `${baseUrl}/og-image.jpg`,
+        jobTitle: data.jobTitle || 'Full Stack Developer & AI/ML Engineer',
+        worksFor: {
+          '@type': 'Organization',
+          name: data.company || 'Freelance'
+        },
+        alumniOf: data.education || [],
         knowsAbout: data.skills || [
-          'JavaScript',
-          'TypeScript',
+          'Full Stack Development',
+          'Machine Learning',
+          'Artificial Intelligence',
           'React',
           'Node.js',
           'Python',
-          'Web Development',
-          'Software Engineering'
+          'TypeScript'
         ],
-        alumniOf: data.education,
-        worksFor: data.currentEmployer
+        sameAs: data.socialLinks || []
       }
-
+    
     case 'website':
       return {
         '@context': 'https://schema.org',
         '@type': 'WebSite',
-        name: data.name || 'John Doe Portfolio',
+        name: data.name || 'Vaibhav Suman Portfolio',
+        url: baseUrl,
         description: data.description || defaultSEO.description,
-        url: data.url || baseUrl,
         author: {
           '@type': 'Person',
-          name: data.authorName || 'John Doe'
+          name: data.authorName || 'Vaibhav Suman'
         },
         potentialAction: {
           '@type': 'SearchAction',
-          target: {
-            '@type': 'EntryPoint',
-            urlTemplate: `${baseUrl}/search?q={search_term_string}`
-          },
+          target: `${baseUrl}/search?q={search_term_string}`,
           'query-input': 'required name=search_term_string'
         }
       }
-
+    
     case 'article':
       return {
         '@context': 'https://schema.org',
@@ -182,42 +176,42 @@ export function generateStructuredData(type: 'person' | 'website' | 'article' | 
         headline: data.title,
         description: data.description,
         image: data.image,
+        datePublished: data.publishedAt,
+        dateModified: data.updatedAt || data.publishedAt,
         author: {
           '@type': 'Person',
-          name: data.author || 'John Doe',
+          name: data.author || 'Vaibhav Suman',
           url: baseUrl
         },
         publisher: {
           '@type': 'Organization',
-          name: 'John Doe Portfolio',
+          name: 'Vaibhav Suman Portfolio',
           logo: {
             '@type': 'ImageObject',
             url: `${baseUrl}/logo.png`
           }
         },
-        datePublished: data.publishedTime,
-        dateModified: data.modifiedTime || data.publishedTime,
         mainEntityOfPage: {
           '@type': 'WebPage',
-          '@id': data.url
+          '@id': `${baseUrl}/blog/${data.slug}`
         },
-        keywords: data.keywords,
-        articleSection: data.section,
-        wordCount: data.wordCount
+        keywords: data.tags?.join(', '),
+        wordCount: data.wordCount,
+        timeRequired: data.readingTime ? `PT${data.readingTime}M` : undefined
       }
-
+    
     case 'breadcrumb':
       return {
         '@context': 'https://schema.org',
         '@type': 'BreadcrumbList',
-        itemListElement: data.items.map((item: any, index: number) => ({
+        itemListElement: data.items?.map((item: any, index: number) => ({
           '@type': 'ListItem',
           position: index + 1,
           name: item.name,
-          item: item.url
+          item: `${baseUrl}${item.url}`
         }))
       }
-
+    
     default:
       return null
   }
@@ -234,25 +228,19 @@ export function generateBlogPostMetadata(post: {
   image?: string
   readingTime?: number
 }): Metadata {
-  const url = `${defaultSEO.url}/blog/${post.slug}`
+  const baseUrl = 'https://vaibhavsuman.dev'
+  const url = `${baseUrl}/blog/${post.slug}`
   
   return generateMetadata({
-    title: `${post.title} | John Doe Blog`,
+    title: `${post.title} | Vaibhav Suman Blog`,
     description: post.description,
     url,
-    image: post.image || `${defaultSEO.url}/api/og?title=${encodeURIComponent(post.title)}`,
+    image: post.image,
     type: 'article',
     publishedTime: post.publishedAt,
-    modifiedTime: post.updatedAt || post.publishedAt,
-    section: 'Technology',
+    modifiedTime: post.updatedAt,
     tags: post.tags,
-    keywords: [
-      ...defaultSEO.keywords || [],
-      ...(post.tags || []),
-      'Blog',
-      'Tutorial',
-      'Tech Article'
-    ]
+    author: post.author
   })
 }
 
@@ -263,53 +251,60 @@ export function generateProjectMetadata(project: {
   technologies?: string[]
   image?: string
 }): Metadata {
-  const url = `${defaultSEO.url}/projects/${project.slug}`
+  const baseUrl = 'https://vaibhavsuman.dev'
+  const url = `${baseUrl}/projects/${project.slug}`
   
   return generateMetadata({
-    title: `${project.title} | John Doe Projects`,
+    title: `${project.title} | Vaibhav Suman Projects`,
     description: project.description,
     url,
-    image: project.image || `${defaultSEO.url}/api/og?title=${encodeURIComponent(project.title)}&type=project`,
-    type: 'website',
-    keywords: [
-      ...defaultSEO.keywords || [],
-      ...(project.technologies || []),
-      'Project',
-      'Portfolio',
-      'Case Study'
-    ]
+    image: project.image,
+    keywords: project.technologies
   })
 }
 
-// Sitemap generation helper
 export function generateSitemapUrls() {
-  const baseUrl = defaultSEO.url
-  const staticPages = [
-    '',
-    '/about',
-    '/projects',
-    '/blog',
-    '/contact',
-    '/experience',
-    '/publications'
-  ]
+  const baseUrl = 'https://vaibhavsuman.dev'
   
-  return staticPages.map(path => ({
-    url: `${baseUrl}${path}`,
-    lastModified: new Date(),
-    changeFrequency: path === '' ? 'weekly' as const : 'monthly' as const,
-    priority: path === '' ? 1.0 : 0.8
-  }))
+  return [
+    {
+      url: baseUrl,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 1,
+    },
+    {
+      url: `${baseUrl}/about`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/projects`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/blog`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/contact`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    },
+  ]
 }
 
-// Robots.txt generation helper
 export function generateRobotsTxt() {
-  const baseUrl = defaultSEO.url
-  
   return `User-agent: *
 Allow: /
 
-Sitemap: ${baseUrl}/sitemap.xml`
+Sitemap: https://vaibhavsuman.dev/sitemap.xml`
 }
 
 export { defaultSEO }

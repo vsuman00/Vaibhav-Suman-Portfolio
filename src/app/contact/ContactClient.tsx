@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import {
   Mail,
@@ -38,6 +38,7 @@ interface FormErrors {
 }
 
 export default function ContactClient() {
+  const [isClient, setIsClient] = useState(false);
   const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
@@ -54,6 +55,10 @@ export default function ContactClient() {
   const [submitStatus, setSubmitStatus] = useState<
     "idle" | "success" | "error"
   >("idle");
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   const projectTypes = [
     "Web Development",

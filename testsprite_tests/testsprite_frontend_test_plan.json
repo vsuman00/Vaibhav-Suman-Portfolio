@@ -1,0 +1,489 @@
+[
+  {
+    "id": "TC001",
+    "title": "Validate Home Page Load and Hero Section Content",
+    "description": "Verify that the Home page loads successfully displaying the hero section with dynamic role rotation and featured content highlights, respecting accessibility standards.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to the Home page ('/')"
+      },
+      {
+        "type": "assertion",
+        "description": "Check that the hero section is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify dynamic role rotation text is present and changes"
+      },
+      {
+        "type": "assertion",
+        "description": "Confirm featured content highlights are displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify keyboard navigation to hero section elements works correctly"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify screen reader announces hero section content properly"
+      }
+    ]
+  },
+  {
+    "id": "TC002",
+    "title": "Projects Page Filtering and Search Functionality",
+    "description": "Ensure the Projects page displays projects correctly, supports filtering by tech stack and search queries, and returns accurate filtered results.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to the Projects page ('/projects')"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify all projects are listed initially"
+      },
+      {
+        "type": "action",
+        "description": "Apply a tech stack filter (e.g., 'React')"
+      },
+      {
+        "type": "assertion",
+        "description": "Confirm only projects containing selected tech stack are displayed"
+      },
+      {
+        "type": "action",
+        "description": "Use the search box with a specific project keyword"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify search results include matching projects only"
+      },
+      {
+        "type": "assertion",
+        "description": "Test keyboard navigation and screen reader access for project filters and search box"
+      }
+    ]
+  },
+  {
+    "id": "TC003",
+    "title": "API Endpoint GET /api/projects - Data Accuracy and Filtering",
+    "description": "Validate that the GET /api/projects endpoint returns correct project data and supports filtering by technology stack parameters.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Send a GET request to /api/projects without filters"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the response includes all projects with correct fields"
+      },
+      {
+        "type": "action",
+        "description": "Send a GET request to /api/projects with a tech stack filter parameter (e.g., ?tech=Next.js)"
+      },
+      {
+        "type": "assertion",
+        "description": "Confirm response only contains projects that include the specified tech stack"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify response status codes are 200 for successful requests"
+      }
+    ]
+  },
+  {
+    "id": "TC004",
+    "title": "Contact Form Validation and Submission",
+    "description": "Check that the contact form validates required fields, including consent, sanitizes inputs, and submits to /api/contact endpoint with proper handling of responses.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to the Contact page ('/contact')"
+      },
+      {
+        "type": "action",
+        "description": "Attempt to submit the form with empty fields"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify validation errors are shown for mandatory fields"
+      },
+      {
+        "type": "action",
+        "description": "Fill in valid inputs except consent checkbox and submit"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify that form displays error for missing consent"
+      },
+      {
+        "type": "action",
+        "description": "Fill in valid inputs with consent checked and submit"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify form data is posted to /api/contact and a success message is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify input sanitization is applied by submitting malicious script inputs and confirming no XSS is executed"
+      }
+    ]
+  },
+  {
+    "id": "TC005",
+    "title": "Dark/Light Theme Switching and Persistence",
+    "description": "Verify that the website theme switches between dark and light modes properly, respects system preferences, and stores user choice persistently across sessions.",
+    "category": "functional",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Load the website with system theme preference set to light"
+      },
+      {
+        "type": "assertion",
+        "description": "Confirm the site initially displays in light mode"
+      },
+      {
+        "type": "action",
+        "description": "Toggle theme switch to dark mode"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify UI updates to dark theme and colors adapt accordingly"
+      },
+      {
+        "type": "action",
+        "description": "Reload the page"
+      },
+      {
+        "type": "assertion",
+        "description": "Confirm dark mode preference is persisted and applied"
+      },
+      {
+        "type": "action",
+        "description": "Change system preference to dark mode and load site in a new incognito window"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify site defaults to dark mode reflecting system setting"
+      }
+    ]
+  },
+  {
+    "id": "TC006",
+    "title": "SEO Metadata and Structured Data Validation",
+    "description": "Check that dynamic meta tags, Open Graph tags, JSON-LD structured data, sitemap, and robots.txt are implemented correctly for SEO optimization.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Open the Home page and inspect HTML head"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify presence and correctness of meta description, title tags, and Open Graph tags"
+      },
+      {
+        "type": "action",
+        "description": "Check JSON-LD structured data is embedded and valid"
+      },
+      {
+        "type": "assertion",
+        "description": "Validate structured data using schema.org standards"
+      },
+      {
+        "type": "action",
+        "description": "Fetch /api/sitemap endpoint"
+      },
+      {
+        "type": "assertion",
+        "description": "Confirm sitemap XML is well-formed and includes correct URLs"
+      },
+      {
+        "type": "action",
+        "description": "Fetch /api/robots endpoint"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify robots.txt content follows best practices"
+      }
+    ]
+  },
+  {
+    "id": "TC007",
+    "title": "Accessibility Compliance - Keyboard Navigation and Screen Reader Support",
+    "description": "Ensure that the entire site is navigable using keyboard only, interactive elements have focus states, and screen readers announce content appropriately, meeting WCAG 2.1 AA standards.",
+    "category": "accessibility",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate through each page using only the keyboard (Tab, Shift+Tab, Enter, Arrow keys)"
+      },
+      {
+        "type": "assertion",
+        "description": "Confirm all interactive elements receive visible focus"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify no keyboard traps or inaccessible components exist"
+      },
+      {
+        "type": "action",
+        "description": "Launch a screen reader and access key pages"
+      },
+      {
+        "type": "assertion",
+        "description": "Check screen reader announces headings, links, buttons, forms properly"
+      }
+    ]
+  },
+  {
+    "id": "TC008",
+    "title": "Performance Validation - Image Optimization and Lazy Loading",
+    "description": "Verify that images are optimized to WebP/AVIF formats, lazy-loaded properly, and caching headers are set to ensure fast page load performance.",
+    "category": "performance",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Load the Home and Projects pages on a simulated slow network"
+      },
+      {
+        "type": "assertion",
+        "description": "Check images are served in WebP or AVIF format when supported"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify lazy loading defers off-screen images until scrolled into view"
+      },
+      {
+        "type": "assertion",
+        "description": "Check caching headers are present for images and static assets"
+      },
+      {
+        "type": "action",
+        "description": "Run Lighthouse audit for Performance score"
+      },
+      {
+        "type": "assertion",
+        "description": "Ensure performance score is 90 or higher"
+      }
+    ]
+  },
+  {
+    "id": "TC009",
+    "title": "Animation and UI Interaction Smoothness Verification",
+    "description": "Validate that UI animations powered by Framer Motion run smoothly without causing layout shifts or performance degradation across devices.",
+    "category": "functional",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate through multiple pages with animations (Hero, Projects, Blog)"
+      },
+      {
+        "type": "assertion",
+        "description": "Observe that animations are fluid and frames per second remain stable"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify no layout shifts or content flashes during animated transitions"
+      }
+    ]
+  },
+  {
+    "id": "TC010",
+    "title": "Docker Build and Run in Development and Production Modes",
+    "description": "Ensure the multi-stage Dockerfile builds successfully and the container runs properly in both development and production configurations with health monitoring endpoints functioning.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Build the Docker container using development configuration"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify build completes without errors"
+      },
+      {
+        "type": "action",
+        "description": "Run the container and access the website"
+      },
+      {
+        "type": "assertion",
+        "description": "Confirm website functions normally in development mode"
+      },
+      {
+        "type": "action",
+        "description": "Build the Docker container using production configuration"
+      },
+      {
+        "type": "assertion",
+        "description": "Ensure build completes successfully"
+      },
+      {
+        "type": "action",
+        "description": "Run the container and verify access to the website"
+      },
+      {
+        "type": "assertion",
+        "description": "Check health endpoints respond with status indicating application uptime"
+      }
+    ]
+  },
+  {
+    "id": "TC011",
+    "title": "CI/CD Pipeline Automated Testing and Deployment via GitHub Actions",
+    "description": "Verify that GitHub Actions workflows run automated tests and deploy the application correctly on commit to main branch.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Push a code commit to the main branch"
+      },
+      {
+        "type": "assertion",
+        "description": "Check GitHub Actions workflow triggers"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify automated tests execute and pass"
+      },
+      {
+        "type": "assertion",
+        "description": "Confirm deployment step runs and completes successfully"
+      }
+    ]
+  },
+  {
+    "id": "TC012",
+    "title": "Security Headers and Input Sanitization Verification",
+    "description": "Ensure HTTP security headers are set correctly and contact form inputs are sanitized to prevent injection or cross-site scripting vulnerabilities.",
+    "category": "security",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Perform a request to any public page and inspect the HTTP response headers"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify presence of security headers like Content-Security-Policy, X-Content-Type-Options, X-Frame-Options, Referrer-Policy"
+      },
+      {
+        "type": "action",
+        "description": "Submit contact form with payload containing script tags and special characters"
+      },
+      {
+        "type": "assertion",
+        "description": "Check that inputs are sanitized and no scripts execute or persist in backend"
+      }
+    ]
+  },
+  {
+    "id": "TC013",
+    "title": "Responsive Design on Multiple Device Sizes and Orientations",
+    "description": "Verify the website layout and functionality adapt flawlessly on various screen sizes including mobile phones, tablets, and desktops in both portrait and landscape modes.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Open the website on a mobile device and verify layout"
+      },
+      {
+        "type": "assertion",
+        "description": "Check UI components are visible, usable, and accessible without horizontal scrolling"
+      },
+      {
+        "type": "action",
+        "description": "Rotate device to landscape and verify no layout breakage"
+      },
+      {
+        "type": "action",
+        "description": "Repeat steps for tablet and desktop screen sizes"
+      },
+      {
+        "type": "assertion",
+        "description": "Confirm consistent responsive behaviour and UI integrity"
+      }
+    ]
+  },
+  {
+    "id": "TC014",
+    "title": "Blog Rendering with Syntax Highlighting",
+    "description": "Validate that technical blog posts render correctly with syntax highlighting for code blocks and markdown content is properly formatted.",
+    "category": "functional",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to Blog page ('/blog')"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify blog posts load with correct titles, categories, and excerpts"
+      },
+      {
+        "type": "action",
+        "description": "Open a blog post containing code blocks"
+      },
+      {
+        "type": "assertion",
+        "description": "Confirm code blocks display with syntax highlighting"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify markdown elements like headings, lists, and links render correctly"
+      }
+    ]
+  },
+  {
+    "id": "TC015",
+    "title": "Sanity Studio Content Management Interface Accessibility and Functionality",
+    "description": "Ensure Sanity Studio content management interface is accessible, supports content creation and updating of portfolio data, and reflects changes correctly in the live site.",
+    "category": "functional",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Log into the Sanity Studio interface ('/studio')"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify UI elements are keyboard navigable and screen-reader friendly"
+      },
+      {
+        "type": "action",
+        "description": "Add or edit a project entry"
+      },
+      {
+        "type": "assertion",
+        "description": "Confirm the project is saved in CMS backend"
+      },
+      {
+        "type": "action",
+        "description": "Visit Projects page on the public site"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify updated content is reflected accurately"
+      }
+    ]
+  }
+]

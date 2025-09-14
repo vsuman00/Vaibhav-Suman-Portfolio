@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useMemo } from 'react'
+import React, { useState, useMemo, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { 
   Search, 
@@ -195,11 +195,16 @@ const typeIcons: Record<Publication['type'], React.ComponentType<any>> = {
 }
 
 export default function PublicationsClient() {
+  const [isClient, setIsClient] = useState(false)
   const [searchTerm, setSearchTerm] = useState('')
   const [selectedType, setSelectedType] = useState('all')
   const [selectedCategory, setSelectedCategory] = useState('all')
   const [sortBy, setSortBy] = useState('year')
   const [expandedAbstract, setExpandedAbstract] = useState<string | null>(null)
+
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
 
   const filteredPublications = useMemo(() => {
     const filtered = mockPublications.filter(pub => {

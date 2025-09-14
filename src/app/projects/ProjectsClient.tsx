@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useMemo, useRef } from 'react'
+import { useState, useMemo, useRef, useEffect } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { Search, Filter, Grid, List, ExternalLink, Github, Calendar, Users, Star, ArrowRight, X } from 'lucide-react'
 
@@ -484,6 +484,7 @@ function ProjectCard({ project, viewMode, index }: ProjectCardProps) {
 }
 
 export default function ProjectsClient() {
+  const [isClient, setIsClient] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
   const [selectedCategory, setSelectedCategory] = useState('All')
   const [selectedStatus, setSelectedStatus] = useState('All')
@@ -493,6 +494,10 @@ export default function ProjectsClient() {
 
   const sectionRef = useRef<HTMLElement>(null)
   const isInView = useInView(sectionRef, { once: true, margin: '-100px' })
+
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
 
   const filteredAndSortedProjects = useMemo(() => {
     const filtered = allProjects.filter(project => {

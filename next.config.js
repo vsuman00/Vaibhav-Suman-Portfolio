@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'standalone',
+  // Use standalone output only in production for Docker deployment
+  output: process.env.NODE_ENV === 'production' ? 'standalone' : undefined,
   images: {
     domains: ['cdn.sanity.io'],
     formats: ['image/webp', 'image/avif'],

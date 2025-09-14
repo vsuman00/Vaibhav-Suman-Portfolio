@@ -68,11 +68,17 @@ function Counter({
   suffix = "",
 }: CounterProps) {
   const [count, setCount] = useState(0);
+  const [isClient, setIsClient] = useState(false);
   const countRef = useRef<HTMLSpanElement>(null);
   const isInView = useInView(countRef, { once: true, margin: "-100px" });
 
+  // Fix hydration mismatch by ensuring client-side rendering
   useEffect(() => {
-    if (!isInView) return;
+    setIsClient(true);
+  }, []);
+
+  useEffect(() => {
+    if (!isInView || !isClient) return;
 
     let startTime: number;
     let animationFrame: number;
@@ -102,7 +108,7 @@ function Counter({
         cancelAnimationFrame(animationFrame);
       }
     };
-  }, [end, duration, isInView]);
+  }, [end, duration, isInView, isClient]);
 
   return (
     <span ref={countRef}>

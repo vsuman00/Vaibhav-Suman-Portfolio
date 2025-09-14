@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
 import {
   User,
@@ -559,8 +559,14 @@ function ExperienceCard({
 
 export default function AboutClient() {
   const [activeSkillCategory, setActiveSkillCategory] = useState("All");
+  const [isClient, setIsClient] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
+
+  // Fix hydration mismatch by ensuring client-side rendering
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   const skillCategories = [
     "All",

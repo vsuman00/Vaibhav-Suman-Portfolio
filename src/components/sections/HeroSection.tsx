@@ -31,15 +31,23 @@ const socialLinks = [
 export default function HeroSection() {
   const [currentRole, setCurrentRole] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
+  const [isClient, setIsClient] = useState(false);
+
+  // Fix hydration mismatch by ensuring client-side rendering
+  useEffect(() => {
+    setIsClient(true);
+    setIsVisible(true);
+  }, []);
 
   useEffect(() => {
-    setIsVisible(true);
+    if (!isClient) return;
+    
     const interval = setInterval(() => {
       setCurrentRole((prev) => (prev + 1) % roles.length);
     }, 3000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [isClient]);
 
   const containerVariants = {
     hidden: { opacity: 0 },
