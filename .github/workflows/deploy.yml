@@ -34,6 +34,24 @@ jobs:
         run: npm run type-check
         
 
+      - name: Validate environment variables
+        run: |
+          echo "Checking required environment variables..."
+          if [ -z "$NEXT_PUBLIC_SANITY_PROJECT_ID" ]; then
+            echo "❌ NEXT_PUBLIC_SANITY_PROJECT_ID is not set"
+            echo "Please add this secret in GitHub repository settings"
+            exit 1
+          fi
+          if [ -z "$NEXT_PUBLIC_SANITY_DATASET" ]; then
+            echo "❌ NEXT_PUBLIC_SANITY_DATASET is not set"
+            echo "Please add this secret in GitHub repository settings"
+            exit 1
+          fi
+          echo "✅ Required environment variables are set"
+        env:
+          NEXT_PUBLIC_SANITY_PROJECT_ID: ${{ secrets.NEXT_PUBLIC_SANITY_PROJECT_ID }}
+          NEXT_PUBLIC_SANITY_DATASET: ${{ secrets.NEXT_PUBLIC_SANITY_DATASET }}
+          
       - name: Build application
         run: npm run build
         env:
