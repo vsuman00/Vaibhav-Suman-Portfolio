@@ -28,11 +28,19 @@ export default async function CertificationsPage() {
     imageSrc: string
   }
 
+  type CertificateData = {
+    name: string
+    desc: string
+    image: string
+    category: string
+    links: { view: string }
+  }
+
   let externalCerts: ExternalCert[] = []
   try {
     const jsonPath = path.join(process.cwd(), 'certificate.json')
     const raw = fs.readFileSync(jsonPath, 'utf-8')
-    const data = JSON.parse(raw) as any[]
+    const data = JSON.parse(raw) as CertificateData[]
 
     externalCerts = data.map((item) => {
       const baseDir = path.join(process.cwd(), 'public', 'images', 'certificate')
@@ -53,7 +61,7 @@ export default async function CertificationsPage() {
         imageSrc,
       } as ExternalCert
     })
-  } catch (e) {
+  } catch {
     externalCerts = []
   }
 

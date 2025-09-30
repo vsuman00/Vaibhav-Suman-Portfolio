@@ -6,7 +6,7 @@ export default function PrivacyPage() {
       <p className="mb-2">Last updated: {today}</p>
 
       <p className="mb-6">
-        This personal portfolio website ("Site") respects your privacy. This
+        This personal portfolio website (&quot;Site&quot;) respects your privacy. This
         policy explains what information we collect, how we use it, and your
         rights.
       </p>

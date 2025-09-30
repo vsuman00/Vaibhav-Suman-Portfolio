@@ -166,7 +166,7 @@ export default function Footer() {
         <div className="border-t border-gray-200 dark:border-gray-700 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="flex items-center space-x-1 text-sm text-gray-600 dark:text-gray-400">
-              <span>© {currentYear} Vaibhav's Portfolio. Made for</span>
+              <span>© {currentYear} Vaibhav&apos;s Portfolio. Made for</span>
               <Heart
                 className="h-4 w-4 text-red-500 fill-current"
                 aria-label="love"

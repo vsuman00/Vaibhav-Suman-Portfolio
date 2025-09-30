@@ -31,7 +31,7 @@ export default function TermsPage() {
 
       <h2 className="text-xl font-semibold mb-2">Disclaimers</h2>
       <p className="mb-4">
-        The Site is provided "as is" without warranties of any kind, including
+        The Site is provided &quot;as is&quot; without warranties of any kind, including
         accuracy, availability, or fitness for a particular purpose.
       </p>
 
