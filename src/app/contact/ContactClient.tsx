@@ -170,8 +170,8 @@ export default function ContactClient() {
     {
       icon: Mail,
       label: "Email",
-      value: "vaibhavsuman5@gmail.com",
-      href: "mailto:vaibhavsuman5@gmail.com",
+      value: "dev.vaibhav01@gmail.com",
+      href: "mailto:dev.vaibhav01@gmail.com",
       description: "Best for project inquiries",
     },
     {
@@ -239,8 +239,8 @@ export default function ContactClient() {
             </span>
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Have a project in mind? I&apos;d love to hear about it. Let&apos;s discuss how
-            we can bring your ideas to life.
+            Have a project in mind? I&apos;d love to hear about it. Let&apos;s
+            discuss how we can bring your ideas to life.
           </p>
         </motion.div>
 
@@ -290,8 +290,8 @@ export default function ContactClient() {
                     aria-hidden="true"
                   />
                   <p className="text-green-800 dark:text-green-200">
-                    Thank you! Your message has been sent successfully. I&apos;ll get
-                    back to you soon.
+                    Thank you! Your message has been sent successfully.
+                    I&apos;ll get back to you soon.
                   </p>
                 </motion.div>
               )}
@@ -739,8 +739,8 @@ export default function ContactClient() {
                 </h3>
               </div>
               <p className="text-green-100 mb-4">
-                I&apos;m currently accepting new projects and collaborations. Let&apos;s
-                discuss your ideas!
+                I&apos;m currently accepting new projects and collaborations.
+                Let&apos;s discuss your ideas!
               </p>
               <div className="flex items-center gap-2 text-sm text-green-100">
                 <Globe className="w-4 h-4" aria-hidden="true" />

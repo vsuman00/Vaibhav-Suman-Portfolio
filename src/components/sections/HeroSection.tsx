@@ -16,13 +16,13 @@ const socialLinks = [
   },
   {
     name: "LinkedIn",
-    href: "https://linkedin.com/in/vsuman00",
+    href: "https://linkedin.com/in/vaibhav-suman",
     icon: Linkedin,
     color: "hover:text-blue-600",
   },
   {
     name: "Email",
-    href: "mailto:vaibhavsuman5@gmail.com",
+    href: "mailto:dev.vaibhav01@gmail.com",
     icon: Mail,
     color: "hover:text-red-600",
   },
@@ -41,7 +41,7 @@ export default function HeroSection() {
 
   useEffect(() => {
     if (!isClient) return;
-    
+
     const interval = setInterval(() => {
       setCurrentRole((prev) => (prev + 1) % roles.length);
     }, 3000);
@@ -151,10 +151,11 @@ export default function HeroSection() {
               <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Link>
             <a
-              href="/resume.pdf"
+              href="https://drive.google.com/file/d/1B5Rp5d0r27bQkinCdM7sGLZOuv-ZuuXT/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-outline group px-8 py-3 text-lg"
+              aria-label="Download resume (opens in new tab)"
             >
               <Download className="mr-2 h-5 w-5 transition-transform group-hover:scale-110" />
               Download Resume

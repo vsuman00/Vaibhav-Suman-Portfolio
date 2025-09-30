@@ -47,7 +47,7 @@ const quickActions = [
     title: "Schedule a Call",
     description: "Book a 30-minute consultation to discuss your project",
     icon: Calendar,
-    href: "https://calendly.com/yourusername",
+    href: "https://calendly.com/vaibhavsuman",
     primary: false,
     external: true,
   },
@@ -143,9 +143,9 @@ export default function CTASection() {
               </span>
             </h2>
             <p className="body-large max-w-3xl mx-auto mb-8">
-              Whether you&apos;re looking to collaborate on cutting-edge research,
-              build innovative applications, or discuss the latest in AI and
-              technology, I&apos;d love to hear from you.
+              Whether you&apos;re looking to collaborate on cutting-edge
+              research, build innovative applications, or discuss the latest in
+              AI and technology, I&apos;d love to hear from you.
             </p>
 
             {/* Primary CTA */}

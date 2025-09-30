@@ -637,7 +637,7 @@ export default function ExperienceClient() {
             Get In Touch
           </a>
           <a
-            href="/resume.pdf"
+            href="https://drive.google.com/file/d/1B5Rp5d0r27bQkinCdM7sGLZOuv-ZuuXT/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="px-6 py-3 border border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-300 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors font-medium"

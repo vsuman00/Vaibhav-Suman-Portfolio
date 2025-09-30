@@ -23,7 +23,7 @@ const socialLinks = [
     href: "https://linkedin.com/in/vaibhav-suman",
     icon: Linkedin,
   },
-  { name: "Email", href: "mailto:vaibhavsuman5@gmail.com", icon: Mail },
+  { name: "Email", href: "mailto:dev.vaibhav01@gmail.com", icon: Mail },
 ];
 
 export default function Header() {

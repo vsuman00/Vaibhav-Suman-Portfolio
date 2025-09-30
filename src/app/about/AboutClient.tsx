@@ -70,15 +70,15 @@ const personalInfo = {
   name: "Vaibhav Suman",
   title: "Full Stack Developer & AI/ML Engineer",
   location: "Bangalore, India",
-  email: "vaibhavsuman@gmail.com",
-  bio: `I&apos;m a passionate full-stack developer with over 5 years of experience building scalable web applications and AI-powered solutions. My journey in technology started with a curiosity about how things work, which led me to pursue computer science and eventually specialize in modern web technologies and machine learning.
+  email: "vaibhavsuman5@gmail.com",
+  bio: `I'm a passionate full-stack developer with over 5 years of experience building scalable web applications and AI-powered solutions. My journey in technology started with a curiosity about how things work, which led me to pursue computer science and eventually specialize in modern web technologies and machine learning.
 
-I believe in writing clean, maintainable code and creating user experiences that make a difference. When I&apos;m not coding, you&apos;ll find me exploring new technologies, contributing to open-source projects, or sharing knowledge through technical writing and speaking at conferences.`,
+I believe in writing clean, maintainable code and creating user experiences that make a difference. When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or sharing knowledge through technical writing and speaking at conferences.`,
   interests: [
     "Artificial Intelligence & Machine Learning",
     "Open Source Contributions",
+    "Web Development",
     "Technical Writing & Blogging",
-    "Photography & Visual Arts",
     "Hiking & Outdoor Adventures",
     "Coffee & Specialty Brewing",
     "Reading Sci-Fi Novels",
@@ -662,13 +662,16 @@ export default function AboutClient() {
             </a>
           </div>
 
-          <button
+          <a
+            href="https://drive.google.com/file/d/1B5Rp5d0r27bQkinCdM7sGLZOuv-ZuuXT/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn-primary inline-flex items-center focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900"
-            aria-label="Download resume PDF"
+            aria-label="Download resume (opens in new tab)"
           >
             <Download className="h-4 w-4 mr-2" aria-hidden="true" />
             Download Resume
-          </button>
+          </a>
         </motion.section>
 
         {/* Bio Section */}
@@ -713,8 +716,8 @@ export default function AboutClient() {
               Technical Skills
             </h2>
             <p className="body-large max-w-3xl mx-auto">
-              Here&apos;s a comprehensive overview of my technical expertise across
-              different domains.
+              Here&apos;s a comprehensive overview of my technical expertise
+              across different domains.
             </p>
           </div>
 
@@ -770,8 +773,8 @@ export default function AboutClient() {
           <div className="text-center mb-12">
             <h2 className="heading-2 mb-4">Professional Experience</h2>
             <p className="body-large max-w-3xl mx-auto">
-              My journey through various roles and the impact I&apos;ve made along
-              the way.
+              My journey through various roles and the impact I&apos;ve made
+              along the way.
             </p>
           </div>
 
@@ -932,8 +935,8 @@ export default function AboutClient() {
               Achievements & Recognition
             </h2>
             <p className="body-large max-w-3xl mx-auto">
-              Awards, certifications, and recognition I&apos;ve received throughout
-              my career.
+              Awards, certifications, and recognition I&apos;ve received
+              throughout my career.
             </p>
           </div>
 
@@ -1037,7 +1040,8 @@ export default function AboutClient() {
               Personal Interests
             </h2>
             <p className="body-large max-w-3xl mx-auto">
-              When I&apos;m not coding, here&apos;s what keeps me inspired and motivated.
+              When I&apos;m not coding, here&apos;s what keeps me inspired and
+              motivated.
             </p>
           </div>
 
@@ -1085,8 +1089,9 @@ export default function AboutClient() {
               Let&apos;s Work Together
             </h2>
             <p className="body-large mb-8 max-w-2xl mx-auto">
-              I&apos;m always interested in new opportunities and exciting projects.
-              Let&apos;s discuss how we can create something amazing together.
+              I&apos;m always interested in new opportunities and exciting
+              projects. Let&apos;s discuss how we can create something amazing
+              together.
             </p>
             <div
               className="flex flex-col sm:flex-row gap-4 justify-center"

@@ -1,0 +1,146 @@
+[
+  {
+    "name": "IBM Full Stack Software Developer",
+    "desc": "Professional certificate in full-stack software development from IBM",
+    "image": "ibm",
+    "category": "tech",
+    "links": {
+      "view": "https://www.coursera.org/account/accomplishments/professional-cert/KXW2TEDQ5W8C"
+    }
+  },
+  {
+    "name": "Cisco AICTE Virtual Internship",
+    "desc": "Virtual internship program in networking and cybersecurity",
+    "image": "cicso",
+    "category": "internship",
+    "links": {
+      "view": "https://drive.google.com/file/d/1EfKGC6QMrN8o3aMcgVhwD0EHt5PCJXLH/view?usp=sharing"
+    }
+  },
+  {
+    "name": "AWS Cloud Practitioner Essentials",
+    "desc": "Foundational course on AWS cloud computing services",
+    "image": "AWS",
+    "category": "tech",
+    "links": {
+      "view": "https://drive.google.com/file/d/1-cbT7vkQpuFuN0Gt4DS7uph2Q_3dWR44/view?usp=sharing"
+    }
+  },
+  {
+    "name": "Microsoft Virtual Internship",
+    "desc": "Virtual internship program with Microsoft Azure technologies",
+    "image": "Microsoft",
+    "category": "internship",
+    "links": {
+      "view": "https://drive.google.com/file/d/1m10jHWCBuiakxxRalVNyY_mH7j6htKCV/view?usp=sharing"
+    }
+  },
+  {
+    "name": "Flipkart GRID 4.0 Level-1",
+    "desc": "Participation certificate for Flipkart GRID 4.0 competition",
+    "image": "flipkart",
+    "category": "tech",
+    "links": {
+      "view": "https://drive.google.com/file/d/1PeoOlFduB150krQdE9g62cEwKl6yN7py/view?usp=sharing"
+    }
+  },
+  {
+    "name": "Web Development Internship",
+    "desc": "Internship completion certificate in web development",
+    "image": "LGM",
+    "category": "internship",
+    "links": {
+      "view": "https://drive.google.com/file/d/1O70KxPa8a5w7eTbph6E9jkU6RG2P6stk/view?usp=sharing"
+    }
+  },
+  {
+    "name": "Java Programming",
+    "desc": "Course completion certificate in Java programming",
+    "image": "GL java",
+    "category": "course",
+    "links": {
+      "view": "https://drive.google.com/file/d/1Ndkag119r2It8yicyLy_z26jU-NC5LjJ/view?usp=sharing"
+    }
+  },
+  {
+    "name": "Java Programming",
+    "desc": "Advanced Java programming course certificate",
+    "image": "CN java",
+    "category": "course",
+    "links": {
+      "view": "https://drive.google.com/file/d/1G062gZm3uT5NK6bdPKY1XaNslzA4nKAF/view?usp=sharing"
+    }
+  },
+  {
+    "name": "Foundation to AI Data Science & Data Analysis",
+    "desc": "Foundational course in AI, data science and data analysis",
+    "image": "samatrix1",
+    "category": "course",
+    "links": {
+      "view": "https://drive.google.com/file/d/11l_953Sf9h3UwSijWN26HldsAExUEqie/view?usp=sharing"
+    }
+  },
+  {
+    "name": "Data Analysis using Python",
+    "desc": "Practical course on data analysis using Python programming",
+    "image": "samatrix2",
+    "category": "course",
+    "links": {
+      "view": "https://drive.google.com/file/d/1Vn_IxcCzNvgxkxC9JQsFyxtrQlrA4RIS/view?usp=sharing"
+    }
+  },
+  {
+    "name": "Machine Learning & Pattern Recognition",
+    "desc": "Advanced course in machine learning and pattern recognition",
+    "image": "samatrix3",
+    "category": "course",
+    "links": {
+      "view": "https://drive.google.com/file/d/1RekCwVGz2y_PDHtB1Ha-5XFCJaVdoND4/view?usp=sharing"
+    }
+  },
+  {
+    "name": "R Programming for Data Science",
+    "desc": "Comprehensive course on R programming for data science",
+    "image": "samatrix4",
+    "category": "course",
+    "links": {
+      "view": "https://drive.google.com/file/d/1LTI0Rut2TaqVagmiFOZJIK_hWmJgot-e/view?usp=sharing"
+    }
+  },
+  {
+    "name": "Application Development using Microservices and Serverless",
+    "desc": "Advanced course on microservices and serverless application development",
+    "image": "IBM2",
+    "category": "tech",
+    "links": {
+      "view": "https://coursera.org/share/3ffa2bbb0db52e834fbe16ce57d0f87f"
+    }
+  },
+  {
+    "name": "Cisco: Cybersecurity Essentials",
+    "desc": "Essential cybersecurity concepts and practices course",
+    "image": "cyberEsstional",
+    "category": "tech",
+    "links": {
+      "view": "https://drive.google.com/file/d/1PGImkNhdtdzWQjSFNjelRWZsxxsFqp7G/view?usp=sharing"
+    }
+  },
+  {
+    "name": "Cisco: Introduction to Network",
+    "desc": "Foundational networking concepts and technologies course",
+    "image": "network",
+    "category": "tech",
+    "links": {
+      "view": "https://drive.google.com/file/d/1q2a4dtuB6ZlQ7nC0In5krLWxdHg5zdWj/view?usp=sharing"
+    }
+  },
+  {
+    "name": "Cisco: Introduction to Cybersecurity",
+    "desc": "Introduction to cybersecurity fundamentals and best practices",
+    "image": "ciber",
+    "category": "tech",
+    "links": {
+      "view": "https://drive.google.com/file/d/1P5ilfW_JQWo0vZGecuWStat2RYoKfiwp/view?usp=sharing"
+    }
+  }
+]
