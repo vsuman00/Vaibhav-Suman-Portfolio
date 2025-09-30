@@ -2,13 +2,6 @@ import { MetadataRoute } from 'next'
 import { generateSitemapUrls } from '@/lib/seo'
 
 // Mock data for dynamic routes - in a real app, this would come from your CMS or database
-const mockBlogPosts = [
-  { slug: 'getting-started-with-nextjs-14', updatedAt: '2024-01-15' },
-  { slug: 'building-scalable-react-applications', updatedAt: '2024-01-10' },
-  { slug: 'typescript-best-practices', updatedAt: '2024-01-05' },
-  { slug: 'modern-css-techniques', updatedAt: '2023-12-20' },
-  { slug: 'api-design-principles', updatedAt: '2023-12-15' }
-]
 
 const mockProjects = [
   { slug: 'ecommerce-platform', updatedAt: '2024-01-12' },
@@ -24,14 +17,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Static pages
   const staticUrls = generateSitemapUrls()
   
-  // Dynamic blog post URLs
-  const blogUrls = mockBlogPosts.map(post => ({
-    url: `${baseUrl}/blog/${post.slug}`,
-    lastModified: new Date(post.updatedAt),
-    changeFrequency: 'monthly' as const,
-    priority: 0.7
-  }))
-  
   // Dynamic project URLs
   const projectUrls = mockProjects.map(project => ({
     url: `${baseUrl}/projects/${project.slug}`,
@@ -42,7 +27,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   
   return [
     ...staticUrls,
-    ...blogUrls,
     ...projectUrls
   ]
 }
@@ -53,18 +37,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
 export async function generateSitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://johndoe.dev'
   
-  // Fetch blog posts from your CMS/database
-  // const blogPosts = await getBlogPosts()
   // const projects = await getProjects()
   
   const staticUrls = generateSitemapUrls()
-  
-  const blogUrls = blogPosts.map(post => ({
-    url: `${baseUrl}/blog/${post.slug}`,
-    lastModified: new Date(post.updatedAt),
-    changeFrequency: 'monthly' as const,
-    priority: 0.7
-  }))
   
   const projectUrls = projects.map(project => ({
     url: `${baseUrl}/projects/${project.slug}`,
@@ -75,7 +50,6 @@ export async function generateSitemap(): Promise<MetadataRoute.Sitemap> {
   
   return [
     ...staticUrls,
-    ...blogUrls,
     ...projectUrls
   ]
 }

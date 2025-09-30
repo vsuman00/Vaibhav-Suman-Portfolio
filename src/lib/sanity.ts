@@ -114,51 +114,7 @@ export const queries = {
     type
   }`,
 
-  // Blog posts
-  blogPosts: `*[_type == "blogPost" && published == true] | order(publishedAt desc) {
-    _id,
-    title,
-    slug,
-    excerpt,
-    featuredImage,
-    categories,
-    tags,
-    publishedAt,
-    author,
-    readingTime,
-    featured
-  }`,
-
-  featuredBlogPosts: `*[_type == "blogPost" && published == true && featured == true] | order(publishedAt desc) {
-    _id,
-    title,
-    slug,
-    excerpt,
-    featuredImage,
-    categories,
-    publishedAt,
-    readingTime
-  }`,
-
-  blogPostBySlug: `*[_type == "blogPost" && slug.current == $slug && published == true][0] {
-    _id,
-    title,
-    slug,
-    excerpt,
-    content,
-    featuredImage,
-    categories,
-    tags,
-    publishedAt,
-    updatedAt,
-    author,
-    readingTime,
-    seo
-  }`,
-
-  blogCategories: `*[_type == "blogPost" && published == true] | order(publishedAt desc) {
-    categories
-  }`,
+  
 
   // Experience
   experience: `*[_type == "experience"] | order(order asc, startDate desc) {
@@ -232,30 +188,7 @@ export async function getFeaturedPublications() {
   return await client.fetch(queries.featuredPublications)
 }
 
-export async function getBlogPosts() {
-  return await client.fetch(queries.blogPosts)
-}
-
-export async function getFeaturedBlogPosts() {
-  return await client.fetch(queries.featuredBlogPosts)
-}
-
-export async function getBlogPostBySlug(slug: string) {
-  return await client.fetch(queries.blogPostBySlug, { slug })
-}
-
-interface BlogPostWithCategories {
-  categories?: string[]
-}
-
-export async function getBlogCategories() {
-  const posts: BlogPostWithCategories[] = await client.fetch(queries.blogCategories)
-  const categories = new Set<string>()
-  posts.forEach((post) => {
-    post.categories?.forEach((category: string) => categories.add(category))
-  })
-  return Array.from(categories)
-}
+  
 
 export async function getExperience() {
   return await client.fetch(queries.experience)

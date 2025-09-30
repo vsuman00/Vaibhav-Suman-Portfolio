@@ -231,7 +231,7 @@ export function generateStructuredData(
         },
         mainEntityOfPage: {
           "@type": "WebPage",
-          "@id": `${baseUrl}/blog/${data.url?.split("/").pop() || ""}`,
+          "@id": `${baseUrl}${data.url || ""}`,
         },
         keywords: data.keywords?.join(", "),
         wordCount: data.wordCount,
@@ -255,32 +255,7 @@ export function generateStructuredData(
   }
 }
 
-export function generateBlogPostMetadata(post: {
-  title: string;
-  description: string;
-  slug: string;
-  publishedAt: string;
-  updatedAt?: string;
-  tags?: string[];
-  author?: string;
-  image?: string;
-  readingTime?: number;
-}): Metadata {
-  const baseUrl = "https://vaibhavsuman.dev";
-  const url = `${baseUrl}/blog/${post.slug}`;
-
-  return generateMetadata({
-    title: `${post.title} | Vaibhav Suman Blog`,
-    description: post.description,
-    url,
-    image: post.image,
-    type: "article",
-    publishedTime: post.publishedAt,
-    modifiedTime: post.updatedAt,
-    tags: post.tags,
-    author: post.author,
-  });
-}
+// Removed blog-specific metadata generator
 
 export function generateProjectMetadata(project: {
   title: string;
@@ -319,12 +294,6 @@ export function generateSitemapUrls() {
     },
     {
       url: `${baseUrl}/projects`,
-      lastModified: new Date(),
-      changeFrequency: "weekly" as const,
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/blog`,
       lastModified: new Date(),
       changeFrequency: "weekly" as const,
       priority: 0.9,

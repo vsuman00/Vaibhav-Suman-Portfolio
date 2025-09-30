@@ -13,10 +13,9 @@ const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://portfolio.example.c
 export async function GET() {
   try {
     // Fetch dynamic content for sitemap
-    const [projects, publications, blogPosts] = await Promise.all([
+    const [projects, publications] = await Promise.all([
       client.fetch('*[_type == "project" && !(_id in path("drafts.**"))] | order(_createdAt desc)'),
-      client.fetch('*[_type == "publication" && !(_id in path("drafts.**"))] | order(publishedAt desc)'),
-      client.fetch('*[_type == "blogPost" && !(_id in path("drafts.**"))] | order(publishedAt desc)')
+      client.fetch('*[_type == "publication" && !(_id in path("drafts.**"))] | order(publishedAt desc)')
     ])
 
     // Static pages
@@ -26,7 +25,6 @@ export async function GET() {
       '/projects',
       '/publications',
       '/certifications',
-      '/blog',
       '/contact'
     ]
 
@@ -48,12 +46,6 @@ ${projects.map((project: SanityDocument) => `  <url>
 ${publications.map((publication: SanityDocument) => `  <url>
     <loc>${baseUrl}/publications/${publication.slug.current}</loc>
     <lastmod>${new Date(publication._updatedAt).toISOString()}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>`).join('\n')}
-${blogPosts.map((post: SanityDocument) => `  <url>
-    <loc>${baseUrl}/blog/${post.slug.current}</loc>
-    <lastmod>${new Date(post._updatedAt).toISOString()}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>`).join('\n')}

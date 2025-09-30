@@ -57,7 +57,7 @@ It is designed to be implemented efficiently using **Agent Mode of any IDE**, wi
 - **Publications** – Academic work with download options
 - **Certifications** – Timeline or grid with course links
 - **Experience** – Work history with role-specific accomplishments
-- **Blog** – Markdown-based posts, categories, search functionality
+ 
 - **Contact** – Form with validation, consent checkbox, error handling
 - **Resume Download** – PDF file link
 
@@ -120,21 +120,7 @@ It is designed to be implemented efficiently using **Agent Mode of any IDE**, wi
 }
 \`\`\`
 
-### Blog Posts
-
-\`\`\`json
-{
-"name": "blogPost",
-"type": "document",
-"fields": [
-{"name": "title", "type": "string"},
-{"name": "slug", "type": "slug"},
-{"name": "content", "type": "blockContent"},
-{"name": "categories", "type": "array", "of": [{"type": "string"}]},
-{"name": "publishedAt", "type": "datetime"}
-]
-}
-\`\`\`
+ 
 
 ### Contact Messages
 
@@ -168,9 +154,7 @@ It is designed to be implemented efficiently using **Agent Mode of any IDE**, wi
 
 - Returns skills grouped by category
 
-### GET /api/blog
-
-- Returns list of blog posts with categories and slug URLs
+ 
 
 ### POST /api/contact
 

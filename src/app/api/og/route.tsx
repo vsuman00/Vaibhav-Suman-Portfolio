@@ -16,7 +16,7 @@ export async function GET(request: NextRequest) {
       searchParams.get("title") || "John Doe - Full Stack Developer";
     const subtitle =
       searchParams.get("subtitle") || "Building exceptional web experiences";
-    const type = searchParams.get("type") || "default"; // default, blog, project, about
+    const type = searchParams.get("type") || "default"; // default, project, about, contact, experience, publications
 
     // Load font
     const fontData = await interRegular;
@@ -24,12 +24,6 @@ export async function GET(request: NextRequest) {
     // Define colors and styles based on type
     const getTheme = (type: string) => {
       switch (type) {
-        case "blog":
-          return {
-            background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
-            accent: "#4f46e5",
-            icon: "📝",
-          };
         case "project":
           return {
             background: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
@@ -239,6 +233,5 @@ export async function GET(request: NextRequest) {
 }
 
 // Example usage:
-// /api/og?title=My Blog Post&subtitle=Learn about web development&type=blog
 // /api/og?title=My Project&subtitle=A cool web application&type=project
 // /api/og?title=About Me&subtitle=Full Stack Developer&type=about

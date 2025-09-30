@@ -19,7 +19,6 @@ A modern, responsive portfolio website built with Next.js 14, TypeScript, and Sa
 - **Publications**: Academic and technical publications
 - **Experience**: Professional work history and achievements
 - **Certifications**: Professional certifications and credentials
-- **Blog**: Technical articles and insights
 - **Contact**: Contact form with email integration
 - **Skills**: Technical skills with proficiency levels
 - **Statistics**: Dynamic stats display
@@ -139,7 +138,6 @@ npm run type-check   # Run TypeScript type checking
    - Publications: Academic and technical publications
    - Experience: Work history and achievements
    - Certifications: Professional credentials
-   - Blog Posts: Technical articles
    - Skills: Technical proficiencies
    - Contact Messages: Form submissions
 

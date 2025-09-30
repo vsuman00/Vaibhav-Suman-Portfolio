@@ -10,7 +10,6 @@ const navigation = {
     { name: 'About', href: '/about' },
     { name: 'Projects', href: '/projects' },
     { name: 'Publications', href: '/publications' },
-    { name: 'Blog', href: '/blog' },
     { name: 'Contact', href: '/contact' },
   ],
   legal: [
@@ -135,14 +134,7 @@ export default function Footer() {
                     Sitemap
                   </Link>
                 </li>
-                <li>
-                  <Link
-                    href="/rss.xml"
-                    className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 rounded-md"
-                  >
-                    RSS Feed
-                  </Link>
-                </li>
+                
                 {navigation.legal.map((item) => (
                   <li key={item.name}>
                     <Link
