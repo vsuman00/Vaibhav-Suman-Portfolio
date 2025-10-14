@@ -1,7 +1,7 @@
-import type { StructureResolver } from 'sanity/structure'
+import type { StructureBuilder } from 'sanity/desk'
 
 // Simplified Studio structure without blog types
-export const structure: StructureResolver = (S) =>
+export const structure = (S: StructureBuilder) =>
   S.list()
     .title('Content')
     .items([

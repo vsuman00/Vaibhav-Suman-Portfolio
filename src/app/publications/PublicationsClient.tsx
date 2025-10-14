@@ -12,7 +12,6 @@ import {
   Quote,
   ChevronDown,
   FileText,
-  Globe,
   TrendingUp,
 } from "lucide-react";
 
@@ -35,174 +34,108 @@ interface Publication {
   pages?: string;
   volume?: string;
   issue?: string;
-  isFirstAuthor: boolean;
-  isCorresponding: boolean;
-  collaborators: string[];
-  fundingSource?: string;
   category: string;
 }
 
 const mockPublications: Publication[] = [
   {
     id: "1",
-    title:
-      "Advanced Machine Learning Approaches for Predictive Analytics in Healthcare Systems",
+    title: "Fake News Detection Using ARO and LSTM Algorithms",
     authors: [
-      "Your Name",
-      "Dr. Jane Smith",
-      "Prof. John Doe",
-      "Dr. Alice Johnson",
+      "Vaibhav Suman",
+      "Dr. Amit Bhagat",
+      "Prof. Dharmendra Dangi",
+      "Prof. Dheeraj Kumar Dixit",
+      "Dr. Suvarna Sharma",
     ],
-    journal: "Nature Machine Intelligence",
+    journal: "Springer Natural Computer Science (SN Computer Science)",
     year: 2024,
     type: "journal",
     status: "published",
     abstract:
-      "This paper presents novel machine learning methodologies for predictive analytics in healthcare systems, demonstrating significant improvements in patient outcome prediction accuracy. We introduce a hybrid deep learning architecture that combines convolutional neural networks with transformer models to analyze multi-modal healthcare data including electronic health records, medical imaging, and genomic information.",
+      "There has been an exponential increase in social media content over the past few years due to the popularity of social media platforms. However, this has also resulted in the dissemination of intentionally false information, or fake news, which can have significant negative effects on society. As a result, detecting fake news has become an important issue that requires attention. Promoting trust in the global community is crucial to preventing the spread of false information in mass media. A study report suggests a reliable technique for identifying false news in order to remedy this. The author has thoughtfully chosen two distinct datasets: the Buzzfeed dataset, which is an assortment of news articles from Buzzfeed News, and the ISOT dataset, which is a collection of social media postings and articles from other sources. The author thoroughly analyzed a variety of content kinds and assessed the efficacy of various approaches and methods for processing and categorizing them using the datasets. The study found that these datasets have accuracy rates of 99% and 97.8% respectively.",
     keywords: [
       "machine learning",
-      "healthcare",
-      "predictive analytics",
+      "Fake news Detection",
+      "Pre-Processing",
       "deep learning",
-      "medical AI",
+      "LSTM",
+      "ARO algorithm",
     ],
-    doi: "10.1038/s42256-024-00123-4",
-    url: "https://nature.com/articles/s42256-024-00123-4",
+    doi: "10.1007/s42979-024-03574-x",
+    url: "https://link.springer.com/article/10.1007/s42979-024-03574-x/",
     pdfUrl: "/publications/ml-healthcare-2024.pdf",
-    citations: 45,
-    impactFactor: 25.8,
-    venue: "Nature Machine Intelligence",
-    pages: "123-145",
-    volume: "5",
-    issue: "3",
-    isFirstAuthor: true,
-    isCorresponding: true,
-    collaborators: ["Stanford University", "MIT", "Johns Hopkins"],
-    fundingSource: "NIH Grant R01-AI123456",
-    category: "Artificial Intelligence",
+    citations: 1,
+    venue: "Springer Nature Singapore",
+    pages: "36",
+    volume: "6",
+    issue: "1",
+    category: "Machine Learning",
   },
   {
     id: "2",
     title:
-      "Quantum Computing Applications in Cryptographic Security: A Comprehensive Analysis",
-    authors: ["Dr. Bob Wilson", "Your Name", "Prof. Carol Davis"],
-    journal: "IEEE Transactions on Quantum Engineering",
-    year: 2023,
-    type: "journal",
+      "Computer Vision and Artificial Intelligence for Intelligence Automation Systems (IAS)",
+    authors: [
+      "Prof.Dharmendra Dangi",
+      "Vaibhav Suman",
+      "Dr. Amit Bhagat",
+      "Prof. Dheeraj Kumar Dixit",
+    ],
+    journal:
+      "Handbook of Intelligent Automation Systems Using Computer Vision and Artificial Intelligence",
+    year: 2025,
+    type: "book-chapter",
     status: "published",
     abstract:
-      "We explore the implications of quantum computing on modern cryptographic systems and propose novel quantum-resistant algorithms. Our research demonstrates the vulnerability of current encryption methods to quantum attacks and provides practical solutions for post-quantum cryptography implementation.",
+      "Intelligent automation systems (IAS) powered by AI and computer vision are transforming business operations by simplifying tasks, reducing errors, and delivering insights. Widely used in banking, healthcare, insurance, retail, and manufacturing, they enhance security, quality control, and decision-making. Emerging technologies like machine learning, edge computing, and IoT are further advancing these systems. Applications range from surveillance and threat detection to quality assurance, agriculture disease detection, and automotive inspections. By integrating AI and computer vision, businesses gain efficiency, flexibility, and competitiveness while opening new opportunities for innovation.",
     keywords: [
-      "quantum computing",
-      "cryptography",
-      "security",
-      "post-quantum",
-      "encryption",
+      "Computer vision",
+      "artificial intelligence (AI)",
+      "automation",
+      "intelligence",
+      "machine learning",
+      "natural language processing (NLP)",
     ],
-    doi: "10.1109/TQE.2023.3456789",
-    url: "https://ieeexplore.ieee.org/document/3456789",
-    pdfUrl: "/publications/quantum-crypto-2023.pdf",
-    citations: 78,
-    impactFactor: 8.2,
-    venue: "IEEE Transactions on Quantum Engineering",
-    pages: "1-18",
+    doi: "10.1002/9781394302734.ch11",
+    url: "https://onlinelibrary.wiley.com/doi/abs/10.1002/9781394302734.ch11",
+    pdfUrl:
+      "https://books.google.co.in/books?hl=en&lr=&id=QQZ0EQAAQBAJ&oi=fnd&pg=PA227&dq=info:m-EqYFykz_sJ:scholar.google.com&ots=EzUhSOY2vL&sig=0OffrTAOODWoaAnnA03jwlLwFnk&redir_esc=y#v=onepage&q&f=false",
+    citations: 0,    
+    venue: "Wiley-Scrivener Publishing.",
+    pages: "227-246",
     volume: "4",
     issue: "2",
-    isFirstAuthor: false,
-    isCorresponding: false,
-    collaborators: ["IBM Research", "Google Quantum AI"],
-    fundingSource: "NSF Grant CCF-2023456",
-    category: "Quantum Computing",
+    category: "Artificial Intelligence",
   },
   {
     id: "3",
-    title:
-      "Sustainable Software Engineering: Green Computing Practices for Modern Applications",
-    authors: ["Your Name", "Dr. Emma Green", "Prof. Michael Brown"],
-    journal: "ACM Computing Surveys",
+    title: "The Solution to Unemployment in Rural and Urban Areas",
+    authors: ["Vaibhav Suman", "Durgesh Rao", "Hritik Srivastav"],
+    journal:
+      "International Journal of Scientific Research & Engineering Trends",
     year: 2023,
     type: "journal",
     status: "published",
     abstract:
-      "This comprehensive survey examines sustainable software engineering practices and their impact on energy consumption in modern computing systems. We analyze various optimization techniques and propose a framework for developing environmentally conscious software applications.",
+      " Unemployment is a persistent issue for many Individuals. It is a serious predicament that has persisted for years. The government continues to introduce various schemes, but no permanent solution has been found. Daily wage laborers in the unorganized sector face significant issues due to irregular working hours and wages. I have attempted to address this problem by developing an Android app that connects daily wage workers with employers (who need manpower in construction, farming, fishing head loading, home-based work, etc.)",
     keywords: [
-      "sustainable computing",
-      "green software",
+      "Unorganized sector",
+      "Daily wage workers",
       "energy efficiency",
-      "carbon footprint",
-      "optimization",
+      "Fair wages",
+      "Android app",
     ],
-    doi: "10.1145/3567890.1234567",
-    url: "https://dl.acm.org/doi/10.1145/3567890.1234567",
-    pdfUrl: "/publications/green-computing-2023.pdf",
-    citations: 32,
-    impactFactor: 14.3,
-    venue: "ACM Computing Surveys",
+    doi: "",
+    url: "https://www.researchgate.net/publication/382047699_The_Solution_to_Unemployment_in_Rural_and_Urban_Areas",
+    pdfUrl:
+      "https://www.researchgate.net/profile/Vaibhav-Suman-2/publication/382047699_The_Solution_to_Unemployment_in_Rural_and_Urban_Areas/links/66896eb7f3b61c4e2cb74704/The-Solution-to-Unemployment-in-Rural-and-Urban-Areas.pdf",
+    citations: 0,    
+    venue: "International Journal of Scientific Research & Engineering Trends",
     pages: "1-42",
-    volume: "56",
-    issue: "4",
-    isFirstAuthor: true,
-    isCorresponding: true,
-    collaborators: ["University of California", "Microsoft Research"],
-    fundingSource: "DOE Grant DE-SC0023456",
+    volume: "10",
+    issue: "3",
     category: "Software Engineering",
-  },
-  {
-    id: "4",
-    title:
-      "Blockchain-Based Identity Management Systems: Security and Privacy Considerations",
-    authors: ["Dr. Sarah Lee", "Your Name", "Prof. David Kim", "Dr. Lisa Wang"],
-    journal: "Proceedings of the 2024 IEEE Symposium on Security and Privacy",
-    year: 2024,
-    type: "conference",
-    status: "accepted",
-    abstract:
-      "We present a novel blockchain-based identity management system that addresses privacy concerns while maintaining security and decentralization. Our approach uses zero-knowledge proofs and selective disclosure mechanisms to protect user privacy.",
-    keywords: [
-      "blockchain",
-      "identity management",
-      "privacy",
-      "zero-knowledge proofs",
-      "decentralization",
-    ],
-    doi: "10.1109/SP54263.2024.00123",
-    url: "https://ieeexplore.ieee.org/document/00123",
-    pdfUrl: "/publications/blockchain-identity-2024.pdf",
-    citations: 12,
-    venue: "IEEE Symposium on Security and Privacy",
-    pages: "456-471",
-    isFirstAuthor: false,
-    isCorresponding: false,
-    collaborators: ["Carnegie Mellon University", "ETH Zurich"],
-    fundingSource: "DARPA Grant HR001123C0456",
-    category: "Blockchain",
-  },
-  {
-    id: "5",
-    title:
-      "Neural Architecture Search for Edge Computing: Optimizing Deep Learning Models for Resource-Constrained Devices",
-    authors: ["Your Name", "Dr. Alex Chen"],
-    journal: "arXiv preprint",
-    year: 2024,
-    type: "preprint",
-    status: "preprint",
-    abstract:
-      "This work introduces an automated neural architecture search framework specifically designed for edge computing environments. We demonstrate how to optimize deep learning models for deployment on resource-constrained devices while maintaining competitive accuracy.",
-    keywords: [
-      "neural architecture search",
-      "edge computing",
-      "model optimization",
-      "mobile AI",
-      "efficiency",
-    ],
-    url: "https://arxiv.org/abs/2024.12345",
-    pdfUrl: "/publications/nas-edge-2024.pdf",
-    citations: 8,
-    venue: "arXiv",
-    isFirstAuthor: true,
-    isCorresponding: true,
-    collaborators: ["Google Research", "NVIDIA"],
-    category: "Machine Learning",
   },
 ];
 
@@ -308,19 +241,19 @@ export default function PublicationsClient() {
       0
     );
     const hIndex = calculateHIndex(mockPublications);
-    const firstAuthorPapers = mockPublications.filter(
-      (pub) => pub.isFirstAuthor
-    ).length;
-    const correspondingAuthorPapers = mockPublications.filter(
-      (pub) => pub.isCorresponding
-    ).length;
+    // const firstAuthorPapers = mockPublications.filter(
+    //   (pub) => pub.isFirstAuthor
+    // ).length;
+    // const correspondingAuthorPapers = mockPublications.filter(
+    //   (pub) => pub.isCorresponding
+    // ).length;
 
     return {
       totalPublications: mockPublications.length,
       totalCitations,
       hIndex,
-      firstAuthorPapers,
-      correspondingAuthorPapers,
+      // firstAuthorPapers,
+      // correspondingAuthorPapers,
     };
   }, []);
 
@@ -362,7 +295,7 @@ export default function PublicationsClient() {
               >
                 {publication.status.replace("-", " ").toUpperCase()}
               </span>
-              {publication.isFirstAuthor && (
+              {/* {publication.isFirstAuthor && (
                 <span className="ml-2 px-2 py-1 bg-amber-100 text-amber-800 dark:bg-amber-900 dark:text-amber-200 rounded-full text-xs font-medium">
                   First Author
                 </span>
@@ -371,7 +304,7 @@ export default function PublicationsClient() {
                 <span className="ml-2 px-2 py-1 bg-emerald-100 text-emerald-800 dark:bg-emerald-900 dark:text-emerald-200 rounded-full text-xs font-medium">
                   Corresponding
                 </span>
-              )}
+              )} */}
             </div>
           </div>
           <div className="text-right">
@@ -478,14 +411,14 @@ export default function PublicationsClient() {
                 {publication.citations} citations
               </span>
             </div>
-            {publication.collaborators.length > 0 && (
+            {/* {publication.collaborators.length > 0 && (
               <div className="flex items-center space-x-1">
                 <Globe className="w-4 h-4 text-slate-500" />
                 <span className="text-sm text-slate-600 dark:text-slate-400">
                   {publication.collaborators.length} institutions
                 </span>
               </div>
-            )}
+            )} */}
           </div>
 
           <div className="flex items-center space-x-2">
@@ -566,22 +499,22 @@ export default function PublicationsClient() {
             h-index
           </div>
         </div>
-        <div className="bg-white dark:bg-slate-800 rounded-xl p-6 text-center shadow-lg">
+        {/* <div className="bg-white dark:bg-slate-800 rounded-xl p-6 text-center shadow-lg">
           <div className="text-3xl font-bold text-amber-600 dark:text-amber-400 mb-2">
             {stats.firstAuthorPapers}
           </div>
           <div className="text-sm text-slate-600 dark:text-slate-400">
             First Author
           </div>
-        </div>
-        <div className="bg-white dark:bg-slate-800 rounded-xl p-6 text-center shadow-lg">
+        </div> */}
+        {/* <div className="bg-white dark:bg-slate-800 rounded-xl p-6 text-center shadow-lg">
           <div className="text-3xl font-bold text-emerald-600 dark:text-emerald-400 mb-2">
             {stats.correspondingAuthorPapers}
           </div>
           <div className="text-sm text-slate-600 dark:text-slate-400">
             Corresponding
           </div>
-        </div>
+        </div> */}
       </motion.div>
 
       {/* Filters */}
